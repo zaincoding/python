@@ -1,0 +1,48 @@
+def update_list(lst, index, new_value):
+    lst[index] = new_value
+    return lst
+
+def get_input():
+    lst = ['apple', 'Mango', 'grapes', 'Pineapple', 'watermelon']
+
+    # Loop for valid index input
+    while True:
+        index = input("Enter index value: ")
+
+        if index == "":
+            print("One or more input fields are missing. Please enter some value.")
+            continue
+
+        try:
+            index = int(index)
+            if index < 0 or index >= len(lst):
+                print(f"Index out of range. Enter index between 0 and {len(lst)-1}")
+                continue
+            break  # Valid index
+        except ValueError:
+            print("Please enter numeric value only.")
+    
+    # Loop for valid new value input
+    while True:
+        new_value = input("Enter new value: ")
+
+        if new_value == "":
+            print("One or more input fields are missing. Please enter some value.")
+            continue
+
+        if new_value.isnumeric():
+            print("Please enter value in characters only.")
+            continue
+
+        break  # Valid new value
+
+    return lst, index, new_value
+
+
+def main():
+    lst, index, new_value = get_input()
+    updated_list = update_list(lst, index, new_value)
+    print(f"List Updated: {updated_list}")
+
+if __name__ == '__main__':
+    main()

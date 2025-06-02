@@ -1,0 +1,10 @@
+     #user number is 50                        computer number is 40
+     #user enter higher input                          but it is lower
+     #what should be the condition then?
+
+    #the scondition should be 
+     # if user_number > computer_number
+           #if user_input == 'higher'
+               #print(this condition)
+                #else:
+                # print(this condition)
